@@ -106,11 +106,13 @@ button {
 
 #guess {
     color: white;
+    width: 220px;
 }
 
 #rules {
     color: white;
     text-align: center;
+    font-size: .8rem;
 }
 
 /*Rules page*/
