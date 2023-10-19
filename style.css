@@ -27,6 +27,13 @@ h1 {
     border-radius: 50%;
 }
 
+@media only screen and (max-width: 500px){
+    .box {
+        height: 45px;
+        width: 45px;
+    }
+}
+
 #score {
     color: white;
     text-align: center;
@@ -46,6 +53,7 @@ h1 {
 
 button {
     padding: 20px;
+    appearance: none;
 }
 
 #rules {
