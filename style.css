@@ -1,0 +1,54 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    font-size: 4rem;
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.box {
+    height: 60px;
+    width: 60px;
+    border: solid white 10px;
+    border-radius: 50%;
+}
+
+#score {
+    color: white;
+    text-align: center;
+    font-size: medium; 
+}
+
+#colors-score, #in-row-score, #gold-ring-score {
+    color: white;
+    text-align: center;
+    font-size: small;
+}
+
+#button-div {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 20px;
+}
+
+#rules {
+    color: white;
+    text-align: center;
+}

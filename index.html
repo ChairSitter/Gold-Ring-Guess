@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Ring Guess</title>
+    <link href="./style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <h1>GOLD RING GUESS</h1>
+    <section id="grid1" class="grid">
+        <div id="grid1line1" class="line">
+            <div id="grid1box1" class="box"></div>
+            <div id="grid1box2" class="box"></div>
+            <div id="grid1box3" class="box"></div>
+            <div id="grid1box4" class="box"></div>
+            <div id="grid1box5" class="box"></div>
+        </div>
+        <div id="grid1line2" class="line">
+            <div id="grid2box1" class="box"></div>
+            <div id="grid2box2" class="box"></div>
+            <div id="grid2box3" class="box"></div>
+            <div id="grid2box4" class="box"></div>
+            <div id="grid2box5" class="box"></div>
+        </div>
+        <div id="grid1line3" class="line">
+            <div id="grid3box1" class="box"></div>
+            <div id="grid3box2" class="box"></div>
+            <div id="grid3box3" class="box"></div>
+            <div id="grid3box4" class="box"></div>
+            <div id="grid3box5" class="box"></div>
+        </div>
+        <div id="grid1line4" class="line">
+            <div id="grid4box1" class="box"></div>
+            <div id="grid4box2" class="box"></div>
+            <div id="grid4box3" class="box"></div>
+            <div id="grid4box4" class="box"></div>
+            <div id="grid4box5" class="box"></div>
+        </div>
+        <div id="grid1line5" class="line">
+            <div id="grid5box1" class="box"></div>
+            <div id="grid5box2" class="box"></div>
+            <div id="grid5box3" class="box"></div>
+            <div id="grid5box4" class="box"></div>
+            <div id="grid5box5" class="box"></div>
+        </div>
+    </section>        
+    <p id="rules">Guess if each score is more or less than the previous score.</p>
+    <h2 id="score">Total points:</h2>
+    <h2 id="colors-score">Colors score: add up all circles, darker scores more (white = 1, light gray = 2, dark gray = 3, black = 4)</h2>
+    <h2 id="in-row-score">In-a-Row score:  (3-in-a-row = 9 x color, 4-in-a-row = 16 x color, 5-in-a-row = 25 x color)</h2>
+    <h2 id="gold-ring-score">Gold Ring score: 10 x color for each gold ring</h2>
+    <div id="button-div">
+        <button id="play">PLAY</button>
+    </div>
+    <script src="./match2.js"></script>
+</body>
+</html>
