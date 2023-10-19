@@ -44,6 +44,12 @@ h1 {
     font-size: medium; 
 }
 
+#scores-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
 #colors-score, #in-row-score, #gold-ring-score {
     color: white;
     text-align: center;

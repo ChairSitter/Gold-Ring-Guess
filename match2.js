@@ -31,6 +31,9 @@ const colorsScore = document.getElementById('colors-score');
 const inARowScore = document.getElementById('in-row-score');
 const goldRingScore = document.getElementById('gold-ring-score');
 
+const countdown = document.getElementById('countdown');
+
+let previousScore = 0;
 let inARowValue;
 let goldRingValue;
 
@@ -502,11 +505,6 @@ const assignColors = () => {
             goldRingValue = goldRingValue + 40;
         };
     }
-    random25 = Math.floor(Math.random()*25);
-    setTimeout(() => {
-        countInARowValue();
-        countTotalValue();
-    }, 10000);
 }
 
 const reset = () => {
@@ -565,6 +563,7 @@ const countTotalValue = () => {
     colorsScore.innerHTML = `Colors score: ${totalValue}`;
     inARowScore.innerHTML = `In-a-Row score: ${inARowValue}`;
     goldRingScore.innerHTML = `Gold Ring score: ${goldRingValue}`;
+    document.getElementById('play').disabled = false;
 }    
 
 const countInARowValue = () => {
@@ -1595,8 +1594,13 @@ const countInARowValue = () => {
 }
 
 const runFunctions = () => {
+    document.getElementById('play').disabled = true;
     reset();
     assignColors();
+    setTimeout(() => {
+        countInARowValue();
+        countTotalValue();
+    }, 10000);
 };
 
 play.onclick = runFunctions;
