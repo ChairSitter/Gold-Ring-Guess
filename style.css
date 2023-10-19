@@ -38,7 +38,8 @@ h1 {
         width: 45px;
     }
     h1 {
-        font-size: 2.3rem;
+        font-size: 2rem;
+        margin-bottom: 25px;
     }
 }
 
@@ -73,6 +74,7 @@ button {
     flex-grow: 0;
     height: 60px;
     width: 60px;
+    border-radius: 50%;
 }
 
 #countdown {
