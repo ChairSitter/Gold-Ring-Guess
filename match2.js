@@ -31,7 +31,7 @@ const colorsScore = document.getElementById('colors-score');
 const inARowScore = document.getElementById('in-row-score');
 const goldRingScore = document.getElementById('gold-ring-score');
 
-let inARowValue = 0;
+let inARowValue;
 let goldRingValue;
 
 let white = 'rgb(255,255,255)';
@@ -249,7 +249,7 @@ const assignColors = () => {
     }
 
 
-    color12 = pickShade();
+    color11 = pickShade();
     box11.style.backgroundColor = color11;
     random25 = Math.floor(Math.random()*25);
     if(random25 === 0){
@@ -502,13 +502,11 @@ const assignColors = () => {
             goldRingValue = goldRingValue + 40;
         };
     }
-
-
-    countInARowValue();
     random25 = Math.floor(Math.random()*25);
     setTimeout(() => {
+        countInARowValue();
         countTotalValue();
-    }, 5000);
+    }, 10000);
 }
 
 const reset = () => {
@@ -539,6 +537,7 @@ const reset = () => {
     box25.style.border = "solid white 10px";
 
     goldRingValue = 0;
+    inARowValue = 0;
 }
 
 
@@ -569,7 +568,6 @@ const countTotalValue = () => {
 }    
 
 const countInARowValue = () => {
-    inARowValue = 0;
     //code for horizontal rows
     //Code for row 1
     if(color1 === color2 && color2 === color3 && color3 === color4 && color4 === color5){
@@ -1193,75 +1191,75 @@ const countInARowValue = () => {
         }
         inARowValue = inARowValue + (9 * mult);
     }
-//Code for column 5 (5, 10, 15, 20, 25)
-if(color5 === color10 && color10 === color15 && color15 === color20 && color20 === color25){
-    let mult = 1;
-    if(color5 === white){
-        mult = 1;
-    } else if(color5 === lgray){
-        mult = 2
-    } else if(color5 === dgray){
-        mult = 3;
-    } else if(color5 === black){
-        mult = 4;
+    //Code for column 5 (5, 10, 15, 20, 25)
+    if(color5 === color10 && color10 === color15 && color15 === color20 && color20 === color25){
+        let mult = 1;
+        if(color5 === white){
+            mult = 1;
+        } else if(color5 === lgray){
+            mult = 2
+        } else if(color5 === dgray){
+            mult = 3;
+        } else if(color5 === black){
+            mult = 4;
+        }
+        inARowValue = inARowValue + (25 * mult);
+    } else if(color5 === color10 && color10 === color15 && color15 === color20){
+        if(color5 === white){
+            mult = 1;
+        } else if(color5 === lgray){
+            mult = 2
+        } else if(color5 === dgray){
+            mult = 3;
+        } else if(color5 === black){
+            mult = 4;
+        }
+        inARowValue = inARowValue + (16 * mult);
+    } else if(color10 === color15 && color15 === color20 && color20 === color25){
+        if(color10 === white){
+            mult = 1;
+        } else if(color10 === lgray){
+            mult = 2
+        } else if(color10 === dgray){
+            mult = 3;
+        } else if(color10 === black){
+            mult = 4;
+        }
+        inARowValue = inARowValue + (16 * mult);
+    } else if(color5 === color10 && color10 === color15){
+        if(color5 === white){
+            mult = 1;
+        } else if(color5 === lgray){
+            mult = 2
+        } else if(color5 === dgray){
+            mult = 3;
+        } else if(color5 === black){
+            mult = 4;
+        }
+        inARowValue = inARowValue + (9 * mult);
+    } else if(color10 === color15 && color15 === color20){
+        if(color10 === white){
+            mult = 1;
+        } else if(color10 === lgray){
+            mult = 2
+        } else if(color10 === dgray){
+            mult = 3;
+        } else if(color10 === black){
+            mult = 4;
+        }
+        inARowValue = inARowValue + (9 * mult);
+    } else if(color15 === color20 && color20 === color25){
+        if(color15 === white){
+            mult = 1;
+        } else if(color15 === lgray){
+            mult = 2
+        } else if(color15 === dgray){
+            mult = 3;
+        } else if(color15 === black){
+            mult = 4;
+        }
+        inARowValue = inARowValue + (9 * mult);
     }
-    inARowValue = inARowValue + (25 * mult);
-} else if(color5 === color10 && color10 === color15 && color15 === color20){
-    if(color5 === white){
-        mult = 1;
-    } else if(color5 === lgray){
-        mult = 2
-    } else if(color5 === dgray){
-        mult = 3;
-    } else if(color5 === black){
-        mult = 4;
-    }
-    inARowValue = inARowValue + (16 * mult);
-} else if(color10 === color15 && color15 === color20 && color20 === color25){
-    if(color10 === white){
-        mult = 1;
-    } else if(color10 === lgray){
-        mult = 2
-    } else if(color10 === dgray){
-        mult = 3;
-    } else if(color10 === black){
-        mult = 4;
-    }
-    inARowValue = inARowValue + (16 * mult);
-} else if(color5 === color10 && color10 === color15){
-    if(color5 === white){
-        mult = 1;
-    } else if(color5 === lgray){
-        mult = 2
-    } else if(color5 === dgray){
-        mult = 3;
-    } else if(color5 === black){
-        mult = 4;
-    }
-    inARowValue = inARowValue + (9 * mult);
-} else if(color10 === color15 && color15 === color20){
-    if(color10 === white){
-        mult = 1;
-    } else if(color10 === lgray){
-        mult = 2
-    } else if(color10 === dgray){
-        mult = 3;
-    } else if(color10 === black){
-        mult = 4;
-    }
-    inARowValue = inARowValue + (9 * mult);
-} else if(color15 === color20 && color20 === color25){
-    if(color15 === white){
-        mult = 1;
-    } else if(color15 === lgray){
-        mult = 2
-    } else if(color15 === dgray){
-        mult = 3;
-    } else if(color15 === black){
-        mult = 4;
-    }
-    inARowValue = inARowValue + (9 * mult);
-}
     //code for UR-DL diagonals
     //3 7 11
     if(color3 === color7 && color7 === color11){
