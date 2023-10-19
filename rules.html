@@ -7,8 +7,20 @@
     <link href="./style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <h1>GOLD RING GUESS RULES:</h1>
-    <h2></h2>
+    <h1><a href="./index.html">BACK TO GOLD RING GUESS:</a></h1>
+    <h2 id="rules-intro">Rules</h2>
+    <ul>
+        <p class="rule">Object: Try to get the lowest total in 10 rounds.</p><br/>
+        <p class="rule">Click PLAY to start a round.</p>
+        <p class="rule">Each round, the circles are randomly filled white, light gray, dark gray, or black. </p>
+        <p class="rule">The grid has a total value based on adding 3 values: Colors score, In-a-Row score, and Gold Ring score.
+            <br/>Your job is to guess the total value as close as possible in 10 seconds. The difference is added over 10 rounds to produce your game score. Lowest wins!</p><br/>
+        <p class="rule">Colors score- Add up all circles by color value:<br/>White = 1pt<br/>LGray = 2 pts<br/>D Gray = 3 pts<br/>Black = 4 pts</p><br/>
+        <p class="rule">In-a-Row score- 3, 4, or 5 of the same color horizontal, vertical, or diagonal score as follows:
+            <br/>3 in-a-row = 9 x color value<br/>4-in-a-row = 16 x color value<br/>5-in-a-row = 25 x color value</p><br/>
+        <p class="rule">Gold Ring score- each gold ring gives a bonus:<br/>10 x color value
+        </p>
+    </ul>
     <script src="./match2.js"></script>
 </body>
 </html>

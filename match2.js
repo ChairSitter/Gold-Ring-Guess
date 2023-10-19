@@ -555,10 +555,10 @@ const reset = () => {
     goldRingValue = 0;
     goldRingScore.innerHTML = `Gold Ring score: ${goldRingValue}`;
     inARowValue = 0;
-    inARowScore.innerHTML = `In-a-Row Score: ${inARowValue}`;
+    inARowScore.innerHTML = `In-a-Row score: ${inARowValue}`;
     difference = 0;
     totalValue = 0;
-    score.innerHTML = `Total points: ${totalValue}`;
+    score.innerHTML = `Total grid value: ${totalValue}`;
     guessNumber = 0;
     winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}`;
     input.value = 0;
@@ -587,7 +587,7 @@ const countTotalValue = () => {
         colorValue = colorValue + colorCode[j];
     }
     let totalValue = colorValue + inARowValue + goldRingValue;
-    score.innerHTML = `Total points: ${totalValue}`;
+    score.innerHTML = `Total grid value: ${totalValue}`;
     colorsScore.innerHTML = `Colors score: ${colorValue}`;
     inARowScore.innerHTML = `In-a-Row score: ${inARowValue}`;
     goldRingScore.innerHTML = `Gold Ring score: ${goldRingValue}`;
