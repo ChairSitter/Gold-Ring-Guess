@@ -45,17 +45,23 @@
             <div id="grid5box5" class="box"></div>
         </div>
     </section>        
-    <p id="rules">Guess if each score is more or less than the previous score.</p>
+    <p id="rules">Use the slider to guess the grid's total value.</p>
     <div id="button-div">
+        <p id="win-lose"></p>
         <button id="play">PLAY</button>
+        <div id="countdown"></div>
     </div>
-    <h2 id="score">Total points:</h2>
+    <div id="slider-div">
+        <label for="guess" id="guess-label">Guess the score:</label>
+        <input type="range" id="guess" name="guess" min="0" max="500" step="1">
+        <p><output id="guess-value"></output></p>
+    </div>
+    <h2 id="score">Total points: 0</h2>
     <div id="scores-div">
-        <h2 id="colors-score">Colors score: </h2>
-        <h2 id="in-row-score">In-a-Row score:  </h2>
-        <h2 id="gold-ring-score">Gold Ring score: </h2>
+        <h2 id="colors-score">Colors score: 0</h2>
+        <h2 id="in-row-score">In-a-Row score:  0</h2>
+        <h2 id="gold-ring-score">Gold Ring score: 0</h2>
     </div>
-    <div id="countdown"></div>
     <script src="./match2.js"></script>
 </body>
 </html>

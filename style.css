@@ -1,3 +1,7 @@
+/** {
+    border: red solid 1px;
+}*/
+
 body {
     background-color: black;
 }
@@ -62,11 +66,47 @@ h1 {
 }
 
 button {
-    padding: 20px;
+    padding: 10px;
     appearance: none;
+    display: block;
+    margin: 0 50px 0 50px;
+    flex-grow: 0;
+    height: 60px;
+    width: 60px;
+}
+
+#countdown {
+    color: white;
+    flex-grow: 0;
+    height: 60px;
+    width: 120px;
+    font-size: 3rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+#win-lose {
+    color: white;
+    flex-grow: 0; 
+    height: 60px;
+    width: 120px;
+    margin: 0;
+    text-align: center;
+}
+
+#slider-div {
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+}
+
+#guess {
+    color: white;
 }
 
 #rules {
     color: white;
     text-align: center;
 }
+

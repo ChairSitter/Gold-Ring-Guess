@@ -1,4 +1,14 @@
 const play = document.getElementById('play');
+const guessValue = document.querySelector('#guess-value');
+const input = document.querySelector('#guess');
+guessValue.textContent = input.value;
+input.value = 0;
+guessValue.textContent = 0;
+let guessNumber = 0;
+input.addEventListener('input', click => {
+    guessValue.textContent = click.target.value;
+    guessNumber = input.value;
+});
 
 const box1 = document.getElementById('grid1box1');
 const box2 = document.getElementById('grid1box2');
@@ -31,7 +41,13 @@ const colorsScore = document.getElementById('colors-score');
 const inARowScore = document.getElementById('in-row-score');
 const goldRingScore = document.getElementById('gold-ring-score');
 
+const winLose = document.getElementById('win-lose');
+winLose.innerHTML = `Total: 0<br/>Rounds: 0`;
+let differenceTotal = 0;
+
 const countdown = document.getElementById('countdown');
+let countdownVar = 0;
+let roundCount = 0;
 
 let previousScore = 0;
 let inARowValue;
@@ -534,8 +550,19 @@ const reset = () => {
     box24.style.border = "solid white 10px";
     box25.style.border = "solid white 10px";
 
+    colorValue = 0;
+    colorsScore.innerHTML = `Colors score: ${colorValue}`;
     goldRingValue = 0;
+    goldRingScore.innerHTML = `Gold Ring score: ${goldRingValue}`;
     inARowValue = 0;
+    inARowScore.innerHTML = `In-a-Row Score: ${inARowValue}`;
+    difference = 0;
+    totalValue = 0;
+    score.innerHTML = `Total points: ${totalValue}`;
+    guessNumber = 0;
+    winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}`;
+    input.value = 0;
+    guessValue.textContent = 0;
 }
 
 
@@ -555,14 +582,31 @@ const countTotalValue = () => {
             colorCode.push(4);
         }
     }
-    let totalValue = 0;
+    let colorValue = 0;
     for(let j = 0; j < colorCode.length; j++){
-        totalValue = totalValue + colorCode[j];
+        colorValue = colorValue + colorCode[j];
     }
-    score.innerHTML = `Total points: ${totalValue + inARowValue + goldRingValue}`;
-    colorsScore.innerHTML = `Colors score: ${totalValue}`;
+    let totalValue = colorValue + inARowValue + goldRingValue;
+    score.innerHTML = `Total points: ${totalValue}`;
+    colorsScore.innerHTML = `Colors score: ${colorValue}`;
     inARowScore.innerHTML = `In-a-Row score: ${inARowValue}`;
     goldRingScore.innerHTML = `Gold Ring score: ${goldRingValue}`;
+    let difference = 0;
+    roundCount++;
+    if(totalValue > guessNumber){
+        difference = totalValue - guessNumber;
+        differenceTotal = differenceTotal + difference;
+        winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Difference: ${difference}`;
+    } else if(guessNumber > totalValue){
+        difference = guessNumber - totalValue;
+        differenceTotal = differenceTotal + difference;
+        winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Difference: ${difference}`;
+    }
+    if(roundCount === 10){
+        winLose.innerHTML = `10-round<br/>score is<br/>${differenceTotal}!`
+        differenceTotal = 0;
+        roundCount = 0;
+    }
     document.getElementById('play').disabled = false;
 }    
 
@@ -1593,10 +1637,56 @@ const countInARowValue = () => {
     }
 }
 
+const countdownFunction = () => {
+    countdownVar = 10;
+    countdown.innerHTML = countdownVar;
+    setTimeout(() => {
+        countdownVar--;
+        countdown.innerHTML = countdownVar;
+    }, 1000);
+    setTimeout(() => {
+        countdownVar--;
+        countdown.innerHTML = countdownVar;
+    }, 2000);
+    setTimeout(() => {
+        countdownVar--;
+        countdown.innerHTML = countdownVar;
+    }, 3000);
+    setTimeout(() => {
+        countdownVar--;
+        countdown.innerHTML = countdownVar;
+    }, 4000);
+    setTimeout(() => {
+        countdownVar--;
+        countdown.innerHTML = countdownVar;
+    }, 5000);
+    setTimeout(() => {
+        countdownVar--;
+        countdown.innerHTML = countdownVar;
+    }, 6000);
+    setTimeout(() => {
+        countdownVar--;
+        countdown.innerHTML = countdownVar;
+    }, 7000);
+    setTimeout(() => {
+        countdownVar--;
+        countdown.innerHTML = countdownVar;
+    }, 8000);
+    setTimeout(() => {
+        countdownVar--;
+        countdown.innerHTML = countdownVar;
+    }, 9000);
+    setTimeout(() => {
+        countdownVar--;
+        countdown.innerHTML = countdownVar;
+    }, 10000);
+}
+
 const runFunctions = () => {
     document.getElementById('play').disabled = true;
     reset();
     assignColors();
+    countdownFunction();
     setTimeout(() => {
         countInARowValue();
         countTotalValue();
