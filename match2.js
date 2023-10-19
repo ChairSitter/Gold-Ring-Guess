@@ -602,8 +602,6 @@ const countTotalValue = () => {
         differenceTotal = differenceTotal + difference;
         winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Difference: ${difference}`;
     } else if(guessNumber === totalValue){
-        difference = guessNumber - totalValue;
-        differenceTotal = differenceTotal + difference;
         winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Wow! Exactly right!`;
     }
     if(roundCount === 10){
