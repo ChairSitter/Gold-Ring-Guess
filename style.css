@@ -139,3 +139,16 @@ button {
     text-align: center;
     color: white;
 }
+
+.rules-table {
+    color: white;
+}
+
+table, th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+table {
+    border: gold solid 3px;
+}
