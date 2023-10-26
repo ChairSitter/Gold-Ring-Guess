@@ -153,7 +153,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         };
-    }, 80);
+    }, 90);
 
     setTimeout(() => {
         color4 = pickShade();
@@ -172,7 +172,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         };
-    }, 120);
+    }, 150);
 
     setTimeout(() => {
         color5 = pickShade();
@@ -191,7 +191,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 160);
+    }, 220);
 
     setTimeout(() => {
         color6 = pickShade();
@@ -210,7 +210,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 600);
+    }, 1650);
 
     setTimeout(() => {
         color7 = pickShade();
@@ -229,7 +229,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 640);
+    }, 1840);
 
     setTimeout(() => {
         color8 = pickShade();
@@ -248,7 +248,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 680);
+    }, 2040);
 
     setTimeout(() => {
         color9 = pickShade();
@@ -267,7 +267,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 720);
+    }, 2250);
 
     setTimeout(() => {
         color10 = pickShade();
@@ -286,7 +286,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 200);
+    }, 300);
 
     setTimeout(() => {
         color11 = pickShade();
@@ -305,7 +305,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 560);
+    }, 1470);
 
     setTimeout(() => {
         color12 = pickShade();
@@ -324,7 +324,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 920);
+    }, 3450);
 
     setTimeout(() => {
         color13 = pickShade();
@@ -343,7 +343,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 960);
+    }, 4000);
 
     setTimeout(() => {
         color14 = pickShade();
@@ -362,7 +362,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 760);
+    }, 2470);
 
     setTimeout(() => {
         color15 = pickShade();
@@ -381,7 +381,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 240);
+    }, 390);
 
     setTimeout(() => {
         color16 = pickShade();
@@ -400,7 +400,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 520);
+    }, 1300);
 
     setTimeout(() => {
         color17 = pickShade();
@@ -419,7 +419,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 880);
+    }, 3190);
 
     setTimeout(() => {
         color18 = pickShade();
@@ -438,7 +438,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 840);
+    }, 2940);
 
     setTimeout(() => {
         color19 = pickShade();
@@ -457,7 +457,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 800);
+    }, 2700);
 
     setTimeout(() => {
         color20 = pickShade();
@@ -476,7 +476,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 280);
+    }, 490);
 
     setTimeout(() => {
         color21 = pickShade();
@@ -495,7 +495,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 480);
+    }, 1140);
 
     setTimeout(() => {
         color22 = pickShade();
@@ -514,7 +514,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 440);
+    }, 990);
 
     setTimeout(() => {
         color23 = pickShade();
@@ -533,7 +533,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 400);
+    }, 850);
 
     setTimeout(() => {
         color24 = pickShade();
@@ -552,7 +552,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 360);
+    }, 720);
 
     setTimeout(() => {
         color25 = pickShade();
@@ -571,7 +571,7 @@ const assignColors = () => {
                 goldRingValue = goldRingValue + 40;
             };
         }
-    }, 320);
+    }, 600);
 }
 
 const reset = () => {
@@ -664,6 +664,7 @@ const countTotalValue = () => {
         colorValue = colorValue + colorCode[j];
     }
     let totalValue = colorValue + inARowValue + goldRingValue;
+    let valueBonus = Math.round(totalValue/10);
     score.innerHTML = `Total grid value: ${totalValue}`;
     colorsScore.innerHTML = `Colors score: ${colorValue}`;
     inARowScore.innerHTML = `In-a-Row score: ${inARowValue}`;
@@ -672,14 +673,15 @@ const countTotalValue = () => {
     roundCount++;
     if(totalValue > guessNumber){
         difference = totalValue - guessNumber;
-        differenceTotal = differenceTotal + difference;
-        winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Difference: ${difference}`;
+        differenceTotal = (differenceTotal + difference) - valueBonus;
+        winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Difference: ${difference}<br/>Bonus: -${valueBonus}`;
     } else if(guessNumber > totalValue){
         difference = guessNumber - totalValue;
-        differenceTotal = differenceTotal + difference;
-        winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Difference: ${difference}`;
+        differenceTotal = (differenceTotal + difference) - valueBonus;
+        winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Difference: ${difference}<br/>Bonus: -${valueBonus}`;
     } else if(guessNumber == totalValue){
         winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Wow! Exactly right!`;
+        differenceTotal = differenceTotal - valueBonus;
     }
     if(roundCount === 10){
         winLose.innerHTML = `10-round<br/>score is<br/>${differenceTotal}!`
@@ -1719,7 +1721,7 @@ const countInARowValue = () => {
 const countdownFunction = () => {
     countdownVar = 10;
     countdown.innerHTML = ' ';
-    setTimeout(() => {
+    /*setTimeout(() => {
         countdown.innerHTML = countdownVar;
     }, 1000);
     setTimeout(() => {
@@ -1729,9 +1731,9 @@ const countdownFunction = () => {
     setTimeout(() => {
         countdownVar--;
         countdown.innerHTML = countdownVar;
-    }, 3000);
+    }, 3000);*/
     setTimeout(() => {
-        countdownVar--;
+        countdownVar;
         countdown.innerHTML = countdownVar;
     }, 4000);
     setTimeout(() => {
@@ -1762,6 +1764,18 @@ const countdownFunction = () => {
         countdownVar--;
         countdown.innerHTML = countdownVar;
     }, 11000);
+    setTimeout(() => {
+        countdownVar--;
+        countdown.innerHTML = countdownVar;
+    }, 12000);
+    setTimeout(() => {
+        countdownVar--;
+        countdown.innerHTML = countdownVar;
+    }, 13000);
+    setTimeout(() => {
+        countdownVar--;
+        countdown.innerHTML = countdownVar;
+    }, 14000);
 }
 
 const runFunctions = () => {
@@ -1772,7 +1786,7 @@ const runFunctions = () => {
     setTimeout(() => {
         countInARowValue();
         countTotalValue();
-    }, 11000);
+    }, 14000);
 };
 
 play.onclick = runFunctions;
