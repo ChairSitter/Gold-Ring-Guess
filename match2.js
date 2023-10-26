@@ -575,31 +575,31 @@ const assignColors = () => {
 }
 
 const reset = () => {
-    box1.style.border = "solid black 10px";
-    box2.style.border = "solid black 10px";
-    box3.style.border = "solid black 10px";
-    box4.style.border = "solid black 10px";
-    box5.style.border = "solid black 10px";
-    box6.style.border = "solid black 10px";
-    box7.style.border = "solid black 10px";
-    box8.style.border = "solid black 10px";
-    box9.style.border = "solid black 10px";
-    box10.style.border = "solid black 10px";
-    box11.style.border = "solid black 10px";
-    box12.style.border = "solid black 10px";
-    box13.style.border = "solid black 10px";
-    box14.style.border = "solid black 10px";
-    box15.style.border = "solid black 10px";
-    box16.style.border = "solid black 10px";
-    box17.style.border = "solid black 10px";
-    box18.style.border = "solid black 10px";
-    box19.style.border = "solid black 10px";
-    box20.style.border = "solid black 10px";
-    box21.style.border = "solid black 10px";
-    box22.style.border = "solid black 10px";
-    box23.style.border = "solid black 10px";
-    box24.style.border = "solid black 10px";
-    box25.style.border = "solid black 10px";
+    box1.style.border = "solid rgb(66, 66, 66) 10px";
+    box2.style.border = "solid rgb(66, 66, 66) 10px";
+    box3.style.border = "solid rgb(66, 66, 66) 10px";
+    box4.style.border = "solid rgb(66, 66, 66) 10px";
+    box5.style.border = "solid rgb(66, 66, 66) 10px";
+    box6.style.border = "solid rgb(66, 66, 66) 10px";
+    box7.style.border = "solid rgb(66, 66, 66) 10px";
+    box8.style.border = "solid rgb(66, 66, 66) 10px";
+    box9.style.border = "solid rgb(66, 66, 66) 10px";
+    box10.style.border = "solid rgb(66, 66, 66) 10px";
+    box11.style.border = "solid rgb(66, 66, 66) 10px";
+    box12.style.border = "solid rgb(66, 66, 66) 10px";
+    box13.style.border = "solid rgb(66, 66, 66) 10px";
+    box14.style.border = "solid rgb(66, 66, 66) 10px";
+    box15.style.border = "solid rgb(66, 66, 66) 10px";
+    box16.style.border = "solid rgb(66, 66, 66) 10px";
+    box17.style.border = "solid rgb(66, 66, 66) 10px";
+    box18.style.border = "solid rgb(66, 66, 66) 10px";
+    box19.style.border = "solid rgb(66, 66, 66) 10px";
+    box20.style.border = "solid rgb(66, 66, 66) 10px";
+    box21.style.border = "solid rgb(66, 66, 66) 10px";
+    box22.style.border = "solid rgb(66, 66, 66) 10px";
+    box23.style.border = "solid rgb(66, 66, 66) 10px";
+    box24.style.border = "solid rgb(66, 66, 66) 10px";
+    box25.style.border = "solid rgb(66, 66, 66) 10px";
 
     box1.style.backgroundColor = 'black';
     box2.style.backgroundColor = 'black';
