@@ -638,6 +638,7 @@ const reset = () => {
     score.innerHTML = `Total grid value: ${totalValue}`;
     guessNumber = 0;
     winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}`;
+    winLose.style.color = "white";
     input.value = 0;
     guessValue.textContent = 0;
 }
@@ -680,11 +681,22 @@ const countTotalValue = () => {
         differenceTotal = (differenceTotal + difference) - valueBonus;
         winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Difference: ${difference}<br/>Bonus: -${valueBonus}`;
     } else if(guessNumber == totalValue){
-        differenceTotal = differenceTotal - valueBonus;
-        winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Wow! Exactly right!`;
+        differenceTotal = differenceTotal - (valueBonus * 2);
+        winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>PERFECT!<br/>Bonus x2 = -${valueBonus * 2}`;
     }
     if(roundCount === 10){
-        winLose.innerHTML = `10-round<br/>score is<br/>${differenceTotal}!`
+        if(differenceTotal < 1){
+            winLose.style.color = "gold";
+            winLose.innerHTML = `${differenceTotal} points:<br/>Gold<br/>Medal!`
+        } else if(differenceTotal >= 1 && differenceTotal <= 50){
+            winLose.style.color = "silver";
+            winLose.innerHTML = `${differenceTotal} points:<br/>Silver<br/>Medal!`
+        } else if(differenceTotal > 50 && differenceTotal <= 100){
+            winLose.style.color = "rgb(182, 114, 26)";
+            winLose.innerHTML = `${differenceTotal} points:<br/>Bronze<br/>Medal!`
+        } else {
+            winLose.innerHTML = `10-round<br/>score is<br/>${differenceTotal}!`
+        }
         differenceTotal = 0;
         roundCount = 0;
     }
