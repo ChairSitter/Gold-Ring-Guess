@@ -8,36 +8,37 @@
 </head>
 <body>
     <h1><a href="./index.html">BACK TO GOLD RING GUESS:</a></h1>
-    <h2 id="rules-intro">Rules</h2>
+    <h2 id="rules-intro">RULES</h2>
     <ul>
         <p class="rule">Object: Get the lowest total in 10 rounds.</p>
         <table class="rules-table">
             <tr>
-                <th>Score</th>
-                <th>Medal</th>
+                <th>Total Score:</th>
+                <th>Medal:</th>
             </tr>
             <tr>
-                <td>100 or less</td>
-                <td style="color:rgb(182, 114, 26)">BRONZE</td>
+                <td>0 or negative pts</td>
+                <td style="color:gold">GOLD</td>
             </tr>
             <tr>
-                <td>50 or less</td>
+                <td>1 to 50 pts</td>
                 <td style="color:silver">SILVER</td>
             </tr>
             <tr>
-                <td>0 or less</td>
-                <td style="color:gold">GOLD</td>
+                <td>51 to 100 pts</td>
+                <td style="color:rgb(182, 114, 26)">BRONZE</td>
             </tr>
         </table>
         <p class="rule">Click PLAY to start a round.</p>
-        <p class="rule">Each round, the circles are randomly filled white, light gray, dark gray, or black. </p>
-        <p class="rule">The grid has a total value based on adding 3 values: Colors score, In-a-Row score, and Gold Ring score.
-            <br/>Your job is to guess the total value as close as possible in 10 seconds. <br/>
-            The difference is calculated each round, and a Bonus is subtracted based on dividing the value of the grid by 10. <br/>An exact guess will multiply the bonus by 2. Aim for the lowest score in 10 rounds!</p><br/>
-        <p class="rule">Colors score- Add up all circles by color value:<br/>White = 1pt<br/>LGray = 2 pts<br/>D Gray = 3 pts<br/>Black = 4 pts</p><br/>
-        <p class="rule">In-a-Row score- 3, 4, or 5 of the same color horizontal, vertical, or diagonal score as follows:
+        <p class="rule">Each round, the 25 circles are randomly filled white, light gray, dark gray, or black. </p>
+        <p class="rule">The grid will have a total value based on adding 3 values: Darkness score, In-a-Row score, and Gold Ring score.
+            <br/>Your job is to calculate or guess the total grid value as close as possible within 10 seconds. <br/>
+            <br/>Your Score for a round is calculated from 2 numbers: <br/>-adding the Difference between your guess and the actual grid value<br/>-subtracting a Deduction of points equal to 10% of the grid value. 
+            <br/>As a reward for accuracy, an exact guess will multiply this deduction by 2. <br/><br/>Aim for the lowest score in 10 rounds!</p><br/>
+        <p class="rule">Darkness score- add up all the circles by color value; darker colors are worth more points:<br/>White = 1 pt<br/>L Gray = 2 pts<br/>D Gray = 3 pts<br/>Black = 4 pts</p><br/>
+        <p class="rule">In-a-Row score- 3 or more of the same color horizontally, vertically, or diagonally score as follows:
             <br/>3-in-a-row = 9 x color value<br/>4-in-a-row = 16 x color value<br/>5-in-a-row = 25 x color value</p><br/>
-        <p class="rule">Gold Ring score- each gold ring gives a bonus:<br/>10 x color value
+        <p class="rule">Gold Ring score- each gold ring scores 10 x the color value of the circle it surrounds.
         </p>
     </ul>
     <script src="./match2.js"></script>

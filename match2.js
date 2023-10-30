@@ -628,7 +628,7 @@ const reset = () => {
     box25.style.backgroundColor = 'black';
 
     colorValue = 0;
-    colorsScore.innerHTML = `Colors score: ${colorValue}`;
+    colorsScore.innerHTML = `Darkness score: ${colorValue}`;
     goldRingValue = 0;
     goldRingScore.innerHTML = `Gold Ring score: ${goldRingValue}`;
     inARowValue = 0;
@@ -667,7 +667,7 @@ const countTotalValue = () => {
     let totalValue = colorValue + inARowValue + goldRingValue;
     let valueBonus = Math.round(totalValue/10);
     score.innerHTML = `Total grid value: ${totalValue}`;
-    colorsScore.innerHTML = `Colors score: ${colorValue}`;
+    colorsScore.innerHTML = `Darkness score: ${colorValue}`;
     inARowScore.innerHTML = `In-a-Row score: ${inARowValue}`;
     goldRingScore.innerHTML = `Gold Ring score: ${goldRingValue}`;
     let difference = 0;
@@ -675,14 +675,14 @@ const countTotalValue = () => {
     if(totalValue > guessNumber){
         difference = totalValue - guessNumber;
         differenceTotal = (differenceTotal + difference) - valueBonus;
-        winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Difference: ${difference}<br/>Bonus: -${valueBonus}`;
+        winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Difference: ${difference}<br/>Deduction: -${valueBonus}`;
     } else if(guessNumber > totalValue){
         difference = guessNumber - totalValue;
         differenceTotal = (differenceTotal + difference) - valueBonus;
-        winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Difference: ${difference}<br/>Bonus: -${valueBonus}`;
+        winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>Difference: ${difference}<br/>Deduction: -${valueBonus}`;
     } else if(guessNumber == totalValue){
         differenceTotal = differenceTotal - (valueBonus * 2);
-        winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>PERFECT!<br/>Bonus x2: -${valueBonus * 2}`;
+        winLose.innerHTML = `Total: ${differenceTotal}<br/>Rounds: ${roundCount}<br/>PERFECT!<br/>Deduct. x2: -${valueBonus * 2}`;
     }
     if(roundCount === 10){
         if(differenceTotal < 1){
