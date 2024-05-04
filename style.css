@@ -43,6 +43,13 @@ h1 {
     }
 }
 
+@media only screen and (min-width: 1550px){
+    .box {
+        height: 100px;
+        width: 100px;
+    }
+}
+
 #score {
     color: white;
     text-align: center;
